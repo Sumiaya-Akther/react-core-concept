@@ -5,6 +5,7 @@ import Batsman from './Batsman';
 import Counter from './Counter';
 import Users from './Users';
 import Friends from './Friends';
+import Posts from './Posts';
 
 
 const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
@@ -16,9 +17,16 @@ return res.json();
 
 }
 
+const fetchPosts = async() => {
+  const res = await fetch ('https://jsonplaceholder.typicode.com/posts');
+  return res.json();
+  
+  }
+
 function App() {
 
 const friendsPromise = fetchFriends();
+const postsPromise = fetchPosts();
 
 function handleClick(){
   alert('i am clicked')
@@ -37,6 +45,12 @@ const handleAdd5 = (num) =>{
     <>
       
       <h3>Vite + React</h3>
+
+      <Suspense fallback={<h3>Posts is comming ....</h3>}>
+        <Posts postsPromise={postsPromise}>
+
+        </Posts>
+      </Suspense>
       <Suspense fallback={<h3>loading...</h3>}>
       <Users fetchUsers ={fetchUsers}></Users>
       </Suspense>

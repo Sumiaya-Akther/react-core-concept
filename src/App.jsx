@@ -1,6 +1,8 @@
 
 import './App.css'
+import Batsman from './Batsman'
 import Counter from './Counter'
+import Users from './Users'
 
 function App() {
 function handleClick(){
@@ -20,7 +22,8 @@ const handleAdd5 = (num) =>{
     <>
       
       <h3>Vite + React</h3>
-
+      <Users></Users>
+      <Batsman></Batsman>
       <Counter></Counter>
        {/* <button onclick="handleClick()">Click Me</button> */}
       <button onClick={handleClick}>click me</button>

@@ -55,14 +55,20 @@ const handleAdd5 = (num) =>{
       <Users fetchUsers ={fetchUsers}></Users>
       </Suspense>
 
+
+
       <Suspense fallback={<h3>friends is comming...</h3>}>
         <Friends friendsPromise={friendsPromise}></Friends>
       </Suspense>
+
+
       
       <Batsman></Batsman>
+
       <Counter></Counter>
        {/* <button onclick="handleClick()">Click Me</button> */}
       <button onClick={handleClick}>click me</button>
+      
 
       <button onClick={function handleClick2(){
          alert('clicked 2')

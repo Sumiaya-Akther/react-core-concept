@@ -6,14 +6,14 @@ const Batsman = () => {
     const handleSingle = () => {
         const updatedRuns = runs + 1;
         setRuns(updatedRuns);
-    }
+    };
 
     const handleSix = () => {
       const updatedRuns = runs + 6;
       const updatedSixes = sixes + 1;
       setSixes(updatedSixes);
       setRuns(updatedRuns);
-  }
+  };
 
   return (
     <div>
